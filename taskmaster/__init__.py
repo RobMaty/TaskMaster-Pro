@@ -1,6 +1,5 @@
 from flask import Flask
-from flask_sqlalchmey import SQLAlchmey
-import os
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tasks.db'

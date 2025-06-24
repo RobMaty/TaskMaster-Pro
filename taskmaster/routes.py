@@ -2,7 +2,7 @@ from flask import render_template, request redirect, url_for
 from taskmaster import app, db
 from taskmaster.models import Task
 
-@app.routes('/')
+@app.route('/')
 def dashboard():
     pending = Task.query.filter_by(is_completed=False).all()
     completed = Task.query.filter_by(is_completed=True).all()
