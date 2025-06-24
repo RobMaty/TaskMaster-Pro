@@ -9,7 +9,7 @@
         <h1>TaskMaster Pro</h1>
         <form action="{{ url_for('create_task') }}" method="POST">
             <input type="text" name="title" placeholder="Task title" required>
-            <select name="priority">
+           <div class=""></div> <select name="priority">
                 <option value="Low">Low</option>
                 <option value="Medium" selected>Medium</option>
                 <option value="High">High</option>
@@ -17,6 +17,15 @@
             <input type="date" name="due_date">
             <button type="submit">Add Task</button>
         </form>
+
+        <h2>Pending Tasks</h2>
+        <ul>
+            {% for task in pending %}
+            <li class="{{ task.priority|lower }}">
+                {{ task.title }} (Due: {{ task.due_date }})
+                <a href="{{ url_for('update_status', task_id=task.id) }}">Toggle</a>
+            </li>
+        </ul>
     </div>
 </body>
 </html>
