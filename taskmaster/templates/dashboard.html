@@ -25,6 +25,15 @@
                 {{ task.title }} (Due: {{ task.due_date }})
                 <a href="{{ url_for('update_status', task_id=task.id) }}">Toggle</a>
             </li>
+            {% endfor %}
+        </ul>
+
+        <h2>Completed Tasks</h2>
+        <ul>
+            {% for task in completed %}
+            <li class="completed">
+                {{ task.title }}
+            </li>
         </ul>
     </div>
 </body>
