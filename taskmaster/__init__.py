@@ -7,3 +7,5 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 from taskmaster import routes
+
+app.config['SECRET_KEY'] = 'your-secret-key-here'
